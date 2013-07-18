@@ -73,7 +73,7 @@ type tag struct {
 	Value string
 }
 
-func tagValue(v interface{}) (*tag, []ResultType) {
+func tagValue(v ResultType) (*tag, []ResultType) {
 	if t, ok := v.(*tag); ok {
 		return t, nil
 	} else if t, ok := v.([]ResultType); ok {
