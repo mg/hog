@@ -79,7 +79,7 @@ func tagValue(v ResultType) (*tag, []ResultType) {
 	} else if t, ok := v.([]ResultType); ok {
 		return nil, t
 	}
-	panic(fmt.Sprintf("Unkown value %v", v))
+	panic(fmt.Sprintf("Unknown value %v", v))
 }
 
 func promoteText(n *html.Node) ResultType {
