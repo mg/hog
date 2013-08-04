@@ -6,8 +6,15 @@ awk '
 	next
 }
 /<p>.*<\/p>/ {
-	printf("<span class=\"Apple-style-span\" style=\"font-size: medium;\">%s</span>", substr($0,4,length($0)-7))
+	printf("<span class=\"Apple-style-span\" style=\"font-size: medium;\">%s<br/><br/></span>", substr($0,4,length($0)-7))
 	next
 }
-{ print "<br><br>" }
+/^\s+$/ { 
+	print "<br><br>" 
+	next
+}
+/.+/ {
+	print $0
+	next
+}
 '
