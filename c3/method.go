@@ -75,7 +75,7 @@ func main() {
 	fmt.Printf("Memoized object says: %d, takes %s to do it.\n", res, duration)
 }
 
-// Utility funcations
+// Utility functions
 func toInt(v interface{}) int {
 	if value, ok := v.(int); ok {
 		return value

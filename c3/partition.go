@@ -97,7 +97,7 @@ func main() {
 
 }
 
-// Utility funcations
+// Utility functions
 func toInt(v interface{}) int {
 	if value, ok := v.(int); ok {
 		return value

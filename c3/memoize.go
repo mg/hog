@@ -100,7 +100,7 @@ func main() {
 	fmt.Printf("Memoized fib %d: %d at %s\n", fibnum, res, duration)
 }
 
-// Utility funcations
+// Utility functions
 func toInt(v interface{}) int {
 	if value, ok := v.(int); ok {
 		return value
