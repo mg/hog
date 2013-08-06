@@ -22,4 +22,4 @@ The results are predictable, the method takes one second to execute while the me
 	Memoized object says: 2, takes 1.001044387s to do it.
 	Memoized object says: 2, takes 14.893us to do it.
 
-Get the source at [GitHub](https://github.com/mg/hog/blob/master/c3/method.md).
+Get the source at [GitHub](https://github.com/mg/hog/blob/master/c3/method.go).
