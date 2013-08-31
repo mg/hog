@@ -1,3 +1,5 @@
+1.3: The Towers of Hanoi
+
 The Towers of Hanoi is an old puzzle and quite the popular example for recursion in many languages. The legend is that the world will end once you move 64 disks.
 
 This is type of the callback that performs the Hanoi move. An *interface{}* could be used here but since no state is being maintained a function type is a better choice.

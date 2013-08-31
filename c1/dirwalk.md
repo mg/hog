@@ -1,3 +1,5 @@
+1.5: Applications and Variations of Directory Walking
+
 The *dirwalk* is an generic function (yes, Go lacks generics, we will get to that) that walks a directory tree and executes a supplied file function or a supplied directory function for each entry. 
 
 To start there are some types that need to be declared. *ComputeType* is our generic type and *FileFunc* and *DirFunc* are the two user supplied functions.

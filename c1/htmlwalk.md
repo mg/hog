@@ -1,3 +1,5 @@
+1.7: Html
+
 This section took more time than I expected simply because I was hit by the double whammy of not knowing Perl well enough and not knowing Go well enough at the same time.
 
 What I failed to appreciate in the previous section ([1.5: Applications and Variations of Directory Walking](http://higherordergo.blogspot.com/2013/07/15-applications-and-variations-of.html)) was that Perls Push method would, if it received an array to push onto a array, flatten out the second array so I would end up with a single array rather than an array of arrays. This would blow up the second use (promoting elements, see below) since I would end up with a tree of slices rather than a single slice of strings. 

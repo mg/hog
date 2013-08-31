@@ -1,3 +1,5 @@
+2.1: Configuration File Handling
+
 Chapter 2 is all about breaking long if-else chains into maps of values and functions. This will allow us to separate the branching logic from the algorithm, enabling us to easily modify and extend the branching logic and even completely replace it with a different one.
 
 In this first example we create a process that will read through a configuration file that has the form:

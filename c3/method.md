@@ -1,3 +1,5 @@
+3.8.1: Memoization of Object Methods
+
 Our final example from chapter three is the memoization of object methods. Again we can use the same [*memoizer*](http://higherordergo.blogspot.com/2013/08/35-memoize-module_4.html) function of type *Memfunc* as before, no changes are needed.
 
 CODE

@@ -1,3 +1,5 @@
+2.2: Calculator
+
 As in [2.1](http://higherordergo.blogspot.com/2013/07/21-configuration-file-handling.html) we are aiming to separate the branching logic from the algorithm, making it pluggable and the algorithm reusable. And in this example, we actually do code two separate branching tables using the same algorithm for two different effects.
 
 This is a simple *Reverse Polish Notation* calculator, accepting expressions in the form of *"2 3 + 1 -"* and evaluating a result depending on the branching logic supplied.

@@ -1,3 +1,5 @@
+3.7.4: Partitioning
+
 The point of making a generic memoize is to be able to use it with different algorithms. The *partition* algorithm from [1.8: Partitioning](http://higherordergo.blogspot.com/2013/07/18-partitioning.html) has a different signature than the fibonacci algorithm yet we can use [*memoizer*](http://higherordergo.blogspot.com/2013/08/35-memoize-module_4.html) unchanged. First for the type definitions, the only difference being the signature of the *Algofunc*:
 
 CODE

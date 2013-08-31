@@ -1,3 +1,5 @@
+What is this?
+
 Hi.
 
 My name is Magnús Örn Gylfason and I will be posting some Go code on this blog.

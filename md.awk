@@ -1,6 +1,9 @@
 #!/bin/sh
 # usage: markdown FILE.md | ../md.awk | pbcopy
 awk '
+NR < 3 {
+	next
+}
 /<p>CODE<\/p>/ { 
 	print "<div class=\"code\"><pre>CODE</pre></div>\n" 
 	next

@@ -1,3 +1,5 @@
+3.5: The Memoize Module
+
 As mentioned before Go does not have at this time (version 1.1) generics. Go does not have any kind of macro language that allows us to reason about code while compiling. And as far as I know Go has no way to change the function symbol table while compiling. There is a package called debug/gosym but it seems to be more about inspection than meddling; feel free to correct me.
 
 The memoize function in HOP uses some Perl features that are hard to mimic in Go. For one, Perl is very liberal with function signatures, as in there are none. Every function is simply a name that accepts any number and type of arguments through the @_ symbol. In Go that means the variadic function f(...interface{}) and a whole lot of typecasting.
