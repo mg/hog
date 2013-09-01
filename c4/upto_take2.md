@@ -37,7 +37,7 @@ Rather than using a closure to manage state we now use a struct. We then define 
 
 Our iteration is simple enough, after constructing the function we can use the *while* form of the *for* loop to run through the data.
 
-Even though this form requires a bit more boilerplate than the previous one, I believe it is a more useful way. Now we have something resembling a contract that other functions and algorithms can build on. But there are problems, *Next()* is still doing to much. An idempotent way to check for *EOS* is often neccessery. 
+Even though this form requires a bit more boilerplate than the previous one, I believe it is a more useful way. Now we have something resembling a contract that other functions and algorithms can build on. But there are problems, *Next()* is still doing to much. An idempotent way to check for *EOS* is often necessary. 
 
 Another problem is that *Next()* is secretly serving a third purpose. Since it gets called once before we retrieve the first value to guard against an empty stream, it serves as an initialization function. This means the iterator must be in a weird pre-initialization state after the construction. It's easy enough in this case but could prove problematic when solving different problems.
 
