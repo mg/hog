@@ -1,6 +1,6 @@
 4.2.2: dir_walk()
 
-The recursive [dir_walk](http://higherordergo.blogspot.com/2013/07/15-applications-and-variations-of.html) can be rewritten as an *Forward* iterator. 
+The recursive [dirwalk](http://higherordergo.blogspot.com/2013/07/15-applications-and-variations-of.html) can be rewritten as an *Forward* iterator. 
 
     type dirwalk struct {
         cur   string
