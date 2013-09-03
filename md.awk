@@ -8,6 +8,10 @@ NR < 3 {
 	print "<div class=\"code\"><pre>CODE</pre></div>\n" 
 	next
 }
+/<\/code><\/pre>/ { 
+	print "</pre></div><br/>\n" 
+	next
+}
 /<p>.*<\/p>/ {
 	printf("<span class=\"Apple-style-span\" style=\"font-size: medium;\">%s<br/><br/></span>\n\n", substr($0,4,length($0)-7))
 	next
