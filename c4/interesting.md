@@ -1,6 +1,6 @@
 4.3: Examples
 
-The first example is to use the [*Dirwalk*]() iterator from the previous post and create some filters on top of it. To do that, we need to create a *Filter* iterator.
+The first example is to use the [*Dirwalk*](http://higherordergo.blogspot.com/2013/09/422-dirwalk.html) iterator from the previous post and create some filters on top of it. To do that, we need to create a *Filter* iterator.
 
     type FilterFunc func(Iterator) bool
     
