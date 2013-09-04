@@ -10,9 +10,7 @@ The recursive [dirwalk](http://higherordergo.blogspot.com/2013/07/15-application
     
     func Dirwalk(filename string) i.Forward {
         // remove trailing /
-        if strings.HasSuffix(filename, "/") {
-            filename = strings.TrimRight(filename, "/")
-        }
+        strings.TrimSuffix(filename, "/")
         
         // construct and initialize
         var dw dirwalk

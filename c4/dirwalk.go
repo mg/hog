@@ -15,9 +15,7 @@ type dirwalk struct {
 
 func Dirwalk(filename string) i.Forward {
 	// remove trailing /
-	if strings.HasSuffix(filename, "/") {
-		filename = strings.TrimRight(filename, "/")
-	}
+	strings.TrimSuffix(filename, "/")
 
 	// construct and initialize
 	var dw dirwalk
