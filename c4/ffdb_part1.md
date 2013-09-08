@@ -71,7 +71,7 @@ These methods are shared between the readers and are therefore bound to the *rea
         return &itr
     }
 
-The *forward* state is simply the *reader* state plus a *bufio.Reader*. This reader is very similar to the one we created in [4.3.3: Example - Filehandle Iterators]() with the exception of boundaries. The constructor seeks to the beginning position in the file as defined by *bound.Start*, creates the buffered reader from *bufio* and reads the first line.
+The *forward* state is simply the *reader* state plus a *bufio.Reader*. This reader is very similar to the one we created in [4.3.3: Example - Filehandle Iterators](http://higherordergo.blogspot.com/2013/09/433-example-filehandle-iterators.html) with the exception of boundaries. The constructor seeks to the beginning position in the file as defined by *bound.Start*, creates the buffered reader from *bufio* and reads the first line.
 
     func (f *forward) Next() error {
         if f.err == io.EOF || (f.bound.end > 0 && f.pos >= f.bound.end) {
@@ -137,7 +137,7 @@ The constructor must start by positioning itself at the end of the area that the
         r.line = out.String()
     }
 
-The *writeBuffer()* writes the current line that is in the chunk to the variable returned by the *Value()* method. It then appends 
+The *writeBuffer()* writes the current line that is in the chunk to the variable returned by the *Value()* method. It then appends the leftover from the last iteration.
 
     func (r *reverse) Next() error {
         for {
