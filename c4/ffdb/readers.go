@@ -27,6 +27,10 @@ func (r *reader) Error() error {
 	return r.err
 }
 
+func (r *reader) SetError(err error) {
+	r.err = err
+}
+
 func (r *reader) Value() interface{} {
 	return r.line
 }
