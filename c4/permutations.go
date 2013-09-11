@@ -22,6 +22,9 @@ func (p *permute) Error() error {
 	return nil
 }
 
+func (p *permute) SetError(err error) {
+}
+
 func (p *permute) Value() interface{} {
 	return p.items
 }
