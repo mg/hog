@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/mg/i"
-	"github.com/mg/i/iutil"
+	"github.com/mg/i/igen"
 	"math"
 	"os"
 )
@@ -59,7 +59,7 @@ func reverse(in []rune) []rune {
 
 func generate(from, to rune) []rune {
 	list := make([]rune, 0, to-from+1)
-	for itr := iutil.Range(int(from), int(to)+1); !itr.AtEnd(); itr.Next() {
+	for itr := igen.Range(int(from), int(to)+1); !itr.AtEnd(); itr.Next() {
 		list = append(list, rune(itr.Int()))
 	}
 	return list
