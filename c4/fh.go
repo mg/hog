@@ -28,6 +28,10 @@ func (f *fh) Error() error {
 	return f.err
 }
 
+func (f *fh) SetError(err error) {
+	f.err = err
+}
+
 func (f *fh) Value() interface{} {
 	return f.line
 }
