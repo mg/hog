@@ -32,6 +32,10 @@ func (dw *dirwalk) Error() error {
 	return dw.err
 }
 
+func (dw *dirwalk) SetError(err error) {
+	dw.err = err
+}
+
 func (dw *dirwalk) AtEnd() bool {
 	return len(dw.queue) == 0
 }
