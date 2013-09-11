@@ -45,6 +45,9 @@ func (g *gene) Error() error {
 	return nil
 }
 
+func (g *gene) SetError(err error) {
+}
+
 func (g *gene) Value() interface{} {
 	return g.cur
 }
