@@ -41,7 +41,7 @@ I have two solutions to this problem. The first one is to write an adapter spefi
 This is a typical *i.Forward* iterator that simply wraps around the *int* slice you provide.
 
     itr := IntSlice([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11})
-    itr = i.Filter(
+    itr = hoi.Filter(
         func(itr i.Iterator) bool {
             n, _ := itr.Value().(int)
             return math.Mod(float64(n), 3) == 0
@@ -52,7 +52,7 @@ This is a typical *i.Forward* iterator that simply wraps around the *int* slice 
         itr.Next()
     }
 
-I've created a script that generates iterators such as this for all the base types in Go. They are all available in the [iterator library](https://github.com/mg/i).
+I've created a script that generates iterators such as this for all the base types in Go. They are all available in the [iterator library](https://github.com/mg/i/icon).
 
 A second strategy is not to wrap a slice but to use Go's support for *variable arguments*. Yes, if you are forced to wrap a slice this will not help you but sometimes all we need is to wrap a list of values that we've written out in the source file.
 
@@ -89,7 +89,7 @@ A second strategy is not to wrap a slice but to use Go's support for *variable a
 This will work for any type, even a mix of different types.
 
     itr = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-    itr = i.Filter(func(itr i.Iterator) bool {
+    itr = hoi.Filter(func(itr i.Iterator) bool {
         n, _ := itr.Value().(int)
         return math.Mod(float64(n), 2) == 0
     }, itr)
@@ -98,4 +98,4 @@ This will work for any type, even a mix of different types.
         itr.Next()
     }
 
-Get the source at [GitHub](https://github.com/mg/hog/blob/master/c4/list.go). The *variable argument* version is also available in the [iterator library](https://github.com/mg/i/blob/master/list.go).
+Get the source at [GitHub](https://github.com/mg/hog/blob/master/c4/list.go). The *variable argument* version is also available in the [iterator library](https://github.com/mg/i/blob/master/icon/list.go).

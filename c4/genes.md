@@ -93,7 +93,7 @@ The only thing we need to talk about here is that the *atEnd* variable realy mea
 
 Otherwise we loop through the *data* variable, generating the next value for the sequence. 
 
-    i.Each(
+    hoi.Each(
         Gene(os.Args[1]),
         func(itr i.Iterator) bool {
             fmt.Println(itr.Value())

@@ -8,8 +8,8 @@ We conclude this example by going over the *Query* package.
 
 A *FieldQueryFunc* is similar to a *i.FilterFunc* with the exception that it is specialized to work on *string* values rather than *i.Iterator* values.
 
-    func (db *Ffdb) Query(f i.FilterFunc, d Direction) i.Forward {
-        return i.Filter(f, RecordItr(db, d))
+    func (db *Ffdb) Query(f hoi.FilterFunc, d Direction) i.Forward {
+        return hoi.Filter(f, RecordItr(db, d))
     }
     
     func (db *Ffdb) QueryField(fieldname string, f FieldQueryFunc, d Direction) i.Forward {
@@ -23,9 +23,9 @@ A *FieldQueryFunc* is similar to a *i.FilterFunc* with the exception that it is 
         }, d)
     }
 
-The *Query* package contains two fundamental methods that serve as building blocks for all other queries. The first, *Query()*, is an iterator that uses the *i.Filter* iterator to construct a *i.Forward* iterator that will filter a *Record* stream in the direction of *Direction* with the filter *f*.
+The *Query* package contains two fundamental methods that serve as building blocks for all other queries. The first, *Query()*, is an iterator that uses the *hoi.Filter* iterator to construct a *hoi.Forward* iterator that will filter a *Record* stream in the direction of *Direction* with the filter *f*.
 
-The *QueryField()* constructs a *i.FilterFunc* and binds it to a field name and a *FieldQueryFunc*. We can now iterate over the stream of *Records* and ask specific questions about individual field values. Two examples are provided in the *Query* package.
+The *QueryField()* constructs a *hoi.FilterFunc* and binds it to a field name and a *FieldQueryFunc*. We can now iterate over the stream of *Records* and ask specific questions about individual field values. Two examples are provided in the *Query* package.
 
     func (db *Ffdb) QueryFieldRx(fieldname, rxs string, d Direction) i.Forward {
         rx := regexp.MustCompile(rxs)
@@ -47,7 +47,7 @@ An entire pipeline of iterators, from query to text file using e.g. the *QueryFi
 
 PIC
 
-The blue lines represent how data moves through the construction of the pipeline. *FieldName*, *Rx* and *Direction* are send to the *QueryFieldRx* which constructs a *FieldQueryFunc* and sends it along with the *FieldName* and *Direction* to the *QueryField* object. It constructs a *i.FilterFunc* and sends it with the *Direction* to the *Query* object. The *Query* constructs the *Record* iterator, which in turns constructs the *Reader* from the *Direction*.
+The blue lines represent how data moves through the construction of the pipeline. *FieldName*, *Rx* and *Direction* are send to the *QueryFieldRx* which constructs a *FieldQueryFunc* and sends it along with the *FieldName* and *Direction* to the *QueryField* object. It constructs a *hoi.FilterFunc* and sends it with the *Direction* to the *Query* object. The *Query* constructs the *Record* iterator, which in turns constructs the *Reader* from the *Direction*.
 
 Now that the pipeline is ready, we can read bytes from the file. The *Reader* turns those into  a string for each line in the file and hands those over to the *Record* iterator. The *Record* iterator, being a *i.Map* iterator, maps the lines to a *Record* which the *Query* then filters and returns to the user.
 

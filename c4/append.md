@@ -61,8 +61,8 @@ Go has an append function, it simply appends two slices and returns the resultin
 
 The usage is very simple:
 
-    for itr := Append(i.List(1, 2, 3), igen.Range(10, 20)); !itr.AtEnd(); itr.Next() {
+    for itr := Append(hoi.List(1, 2, 3), igen.Range(10, 20)); !itr.AtEnd(); itr.Next() {
         fmt.Println(itr.Value())
     }
 
-Get the source at [GitHub](https://github.com/mg/hog/blob/master/c4/append.go). It is also available in the [iterator library](https://github.com/mg/i/blob/master/append.go).
+Get the source at [GitHub](https://github.com/mg/hog/blob/master/c4/append.go). It is also available in the [iterator library](https://github.com/mg/i/blob/master/hoi/append.go).

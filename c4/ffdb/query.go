@@ -3,6 +3,7 @@ package ffdb
 import (
 	"fmt"
 	"github.com/mg/i"
+	"github.com/mg/i/hoi"
 	"regexp"
 	"strconv"
 	"strings"
@@ -14,8 +15,8 @@ type (
 
 // Basic query builder, accepts a function to process a record, returns an iterator.
 // Maintains file position state
-func (db *Ffdb) Query(f i.FilterFunc, d Direction) i.Forward {
-	return i.Filter(f, RecordItr(db, d))
+func (db *Ffdb) Query(f hoi.FilterFunc, d Direction) i.Forward {
+	return hoi.Filter(f, RecordItr(db, d))
 }
 
 // Build a query iterator to process a single field

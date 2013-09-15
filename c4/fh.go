@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/mg/i"
+	"github.com/mg/i/hoi"
 	"io"
 	"os"
 	"strings"
@@ -50,7 +51,7 @@ func (f *fh) Next() error {
 }
 
 func main() {
-	i.Each(
+	hoi.Each(
 		Fh(os.Stdin),
 		func(itr i.Iterator) bool {
 			line, _ := itr.Value().(string)

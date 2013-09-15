@@ -3,6 +3,7 @@ package ffdb
 import (
 	"fmt"
 	"github.com/mg/i"
+	"github.com/mg/i/hoi"
 )
 
 type (
@@ -10,11 +11,11 @@ type (
 )
 
 func RecordItr(db *Ffdb, d Direction) i.Forward {
-	return i.Map(recordParser(db), d(db))
+	return hoi.Map(recordParser(db), d(db))
 }
 
 // Create a Record from line of string
-func recordParser(db *Ffdb) i.MapFunc {
+func recordParser(db *Ffdb) hoi.MapFunc {
 	return func(itr i.Iterator) interface{} {
 		line, _ := itr.Value().(string)
 		fields := db.fieldsep.Split(line, -1)

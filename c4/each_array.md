@@ -74,13 +74,13 @@ The *Next()* method loops over all iterators, calling *Next()* on each iterator 
 
     itr := EachArray(
         StopAtMax,
-        i.List(1, 2, 3, 4, 5, 6),
-        i.List(6.4, 7.1, 8.2, 9.9),
-        i.List("A", "B", "C", "D", "E"))
+        icon.List(1, 2, 3, 4, 5, 6),
+        icon.List(6.4, 7.1, 8.2, 9.9),
+        icon.List("A", "B", "C", "D", "E"))
     for ; !itr.AtEnd(); itr.Next() {
         fmt.Println(itr.Value())
     }
 
 Usage is simple and there is no need for all the lists to be of the same type.
 
-Get the source at [GitHub](https://github.com/mg/hog/blob/master/c4/each_array.go). It is also available in the iterator library as [Zip](https://github.com/mg/i/blob/master/zip.go).
+Get the source at [GitHub](https://github.com/mg/hog/blob/master/c4/each_array.go). It is also available in the iterator library as [Zip](https://github.com/mg/i/blob/master/hoi/zip.go).

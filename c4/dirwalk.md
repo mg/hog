@@ -91,11 +91,11 @@ It accepts a *Forward* iterator and a function of type EachFunc, loops through t
 
 Now we can use the *Dirwalk()* iterator as follows:
 
-    Each(Dirwalk(os.Args[1]), func(itr i.Iterator) bool {
+    hoi.Each(Dirwalk(os.Args[1]), func(itr i.Iterator) bool {
         fmt.Println(itr.Value())
         return true
     })
 
 Yes, this is very trivial and of dubious value, but it is a start.
 
-You can get the source at [GitHub](https://github.com/mg/hog/blob/master/c4/dirwalk.go) and you can get the source for the Each function in the [i package](https://github.com/mg/i/blob/master/each.go).
+You can get the source at [GitHub](https://github.com/mg/hog/blob/master/c4/dirwalk.go) and you can get the source for the Each function in the [i package](https://github.com/mg/i/blob/master/hoi/each.go).

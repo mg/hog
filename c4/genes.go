@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/mg/i"
+	"github.com/mg/i/hoi"
 	"math"
 	"os"
 	"regexp"
@@ -90,7 +91,7 @@ func main() {
 		os.Exit(0)
 	}
 
-	i.Each(
+	hoi.Each(
 		Gene(os.Args[1]),
 		func(itr i.Iterator) bool {
 			fmt.Println(itr.Value())

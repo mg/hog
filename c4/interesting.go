@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/mg/i"
+	"github.com/mg/i/hoi"
 	"os"
 	"strings"
 )
@@ -72,7 +73,7 @@ func (dw *dirwalk) Next() error {
 	return dw.err
 }
 
-func hasInName(val string) i.FilterFunc {
+func hasInName(val string) hoi.FilterFunc {
 	val = strings.ToUpper(val)
 	return func(itr i.Iterator) bool {
 		filename, _ := itr.Value().(string)
@@ -80,7 +81,7 @@ func hasInName(val string) i.FilterFunc {
 	}
 }
 
-func not(f i.FilterFunc) i.FilterFunc {
+func not(f hoi.FilterFunc) hoi.FilterFunc {
 	return func(itr i.Iterator) bool {
 		return !f(itr)
 	}
@@ -91,8 +92,8 @@ func main() {
 		fmt.Printf("Usage %s NAME\n", os.Args[0])
 		os.Exit(0)
 	}
-	i.Each(
-		i.Filter(not(hasInName("example")), Dirwalk(os.Args[1])),
+	hoi.Each(
+		hoi.Filter(not(hasInName("example")), Dirwalk(os.Args[1])),
 		func(itr i.Iterator) bool {
 			fmt.Println(itr.Value())
 			return true

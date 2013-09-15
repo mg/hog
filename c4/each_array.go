@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/mg/i"
+	"github.com/mg/i/icon"
 )
 
 type stop int
@@ -71,9 +72,9 @@ func (i *eacharray) AtEnd() bool {
 func main() {
 	itr := EachArray(
 		StopAtMax,
-		i.List(1, 2, 3, 4, 5, 6),
-		i.List(6.4, 7.1, 8.2, 9.9),
-		i.List("A", "B", "C", "D", "E"))
+		icon.List(1, 2, 3, 4, 5, 6),
+		icon.List(6.4, 7.1, 8.2, 9.9),
+		icon.List("A", "B", "C", "D", "E"))
 	for ; !itr.AtEnd(); itr.Next() {
 		fmt.Println(itr.Value())
 	}

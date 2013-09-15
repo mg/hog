@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/mg/i"
+	"github.com/mg/i/hoi"
 	"math"
 )
 
@@ -66,7 +67,7 @@ func (i *list) SetError(err error) {
 
 func main() {
 	itr := IntSlice([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11})
-	itr = i.Filter(
+	itr = hoi.Filter(
 		func(itr i.Iterator) bool {
 			n, _ := itr.Value().(int)
 			return math.Mod(float64(n), 3) == 0
@@ -78,7 +79,7 @@ func main() {
 	}
 
 	itr = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-	itr = i.Filter(func(itr i.Iterator) bool {
+	itr = hoi.Filter(func(itr i.Iterator) bool {
 		n, _ := itr.Value().(int)
 		return math.Mod(float64(n), 2) == 0
 	}, itr)

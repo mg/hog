@@ -1,6 +1,6 @@
 4.3.3: Example - A Flat-File Database - part 2
 
-The *Record* package iterates over a stream of lines, parsing them into a *Record* structure and passing them on. It utilizes a new function in the [iterator library](https://github.com/mg/i), *Map*. Lets start by running through it.
+The *Record* package iterates over a stream of lines, parsing them into a *Record* structure and passing them on. It utilizes a new function in the [iterator library](https://github.com/mg/i/blob/master/hoi/map.go), *Map*. Lets start by running through it.
 
     type MapFunc func(Iterator) interface{}
     
@@ -34,7 +34,7 @@ The *Record* package iterates over a stream of lines, parsing them into a *Recor
         return i.itr.Error()
     }
 
-The *Map* iterator accepts a *MapFunc* function and a *Forward* iterator. It then iterates over that iterator and uses the *MapFunc* to transform the value before returning it. You can see source at [GitHub](https://github.com/mg/i/blob/master/map.go).
+The *Map* iterator accepts a *MapFunc* function and a *Forward* iterator. It then iterates over that iterator and uses the *MapFunc* to transform the value before returning it. You can see source at [GitHub](https://github.com/mg/i/blob/master/hoi/map.go).
 
     type (
         Record map[string]string
@@ -46,7 +46,7 @@ The *Map* iterator accepts a *MapFunc* function and a *Forward* iterator. It the
 
 The *Record* type is simply a map of strings keyed to a string. And the constructor creates a map from a stream of lines to a stream of records as defined by *recordParser*. The *Direction* is a function pointer to either the *Forward* or the *Reverse* reader.
 
-    func recordParser(db *Ffdb) i.MapFunc {
+    func recordParser(db *Ffdb) hoi.MapFunc {
         return func(itr i.Iterator) interface{} {
             line, _ := itr.Value().(string)
             fields := db.fieldsep.Split(line, -1)
@@ -61,7 +61,7 @@ The *Record* type is simply a map of strings keyed to a string. And the construc
         }
     }
 
-The *recordParser* returns a function of type *i.MapFunc*. Its purpose is to accept a string, tokenize it with a field seperator defined in the *Ffdb* object, validate that the number of fields in the line matches with the number of fields in the *Ffdb* object, create a *Record* structure and fill it with the values from the line keyed to the fields defined in the *Ffdb* object.
+The *recordParser* returns a function of type *hoi.MapFunc*. Its purpose is to accept a string, tokenize it with a field seperator defined in the *Ffdb* object, validate that the number of fields in the line matches with the number of fields in the *Ffdb* object, create a *Record* structure and fill it with the values from the line keyed to the fields defined in the *Ffdb* object.
 
     func (r *Record) String() string {
         m := (map[string]string)(*r)

@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/mg/i"
+	"github.com/mg/i/hoi"
 	"github.com/mg/i/igen"
 )
 
@@ -62,7 +63,7 @@ func (i *iappend) SetError(err error) {
 }
 
 func main() {
-	for itr := Append(i.List(1, 2, 3), igen.Range(10, 20)); !itr.AtEnd(); itr.Next() {
+	for itr := Append(hoi.List(1, 2, 3), igen.Range(10, 20)); !itr.AtEnd(); itr.Next() {
 		fmt.Println(itr.Value())
 	}
 

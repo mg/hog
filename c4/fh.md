@@ -42,7 +42,7 @@ We need to check if *err* is *io.EOF* or any other error since *io.EOF* is not a
 
 The *Next()* function will read the next line from the file and chomp of the new line indicator.
 
-    i.Each(
+    hoi.Each(
         Fh(os.Stdin),
         func(itr i.Iterator) bool {
             line, _ := itr.Value().(string)

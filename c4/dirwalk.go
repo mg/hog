@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/mg/i"
+	"github.com/mg/i/hoi"
 	"os"
 	"strings"
 )
@@ -78,7 +79,7 @@ func main() {
 		os.Exit(0)
 	}
 
-	i.Each(Dirwalk(os.Args[1]), func(itr i.Iterator) bool {
+	hoi.Each(Dirwalk(os.Args[1]), func(itr i.Iterator) bool {
 		fmt.Println(itr.Value())
 		return true
 	})

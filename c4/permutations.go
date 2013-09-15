@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/mg/i"
+	"github.com/mg/i/hoi"
 	"github.com/mg/i/igen"
 	"math"
 	"os"
@@ -75,7 +76,7 @@ func main() {
 	}
 	from, to := rune(os.Args[1][0]), rune(os.Args[2][0])
 
-	i.Each(
+	hoi.Each(
 		Permute(generate(from, to)),
 		func(itr i.Iterator) bool {
 			r, _ := itr.Value().([]rune)

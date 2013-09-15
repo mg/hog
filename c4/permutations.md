@@ -82,7 +82,7 @@ The first element is held fixed while we go through all permuations of the other
 
 *generate()* accepts paramters such as *'A', 'D'* and returns a slice such as *'A','B','C','D'*. It utilizes *i.Range* to generate an integer interval such as *[63, 67)* that is used to generate the rune slice.
 
-    i.Each(
+    hoi.Each(
         Permute(generate(from, to)),
         func(itr i.Iterator) bool {
             r, _ := itr.Value().([]rune)
