@@ -1,6 +1,6 @@
 5.2: How to Convert a Recursive Function to an Iterator
 
-The trick to turn a recursuive function is to maintain an agenda of todo items, where each item is the state of each invocation of the recursive version. The agenda replaces the stack management we get when we use recursion. 
+The trick to turn a recursive function is to maintain an agenda of todo items, where each item is the state of each invocation of the recursive version. The agenda replaces the stack management we get when we use recursion. 
 
 The integer partition problem is to break an integer into all possible integer components that sum to the original integer. E.g *6* breaks in to:
 
@@ -73,7 +73,7 @@ To produce the sorted version, we leverage the *sort* package provided by Go. We
         return true
     }
 
-Go's package is geared to sort a container from the smalles element to the largest, we want to sort in reverse order so we switch the expression; return *true* if item *i* is larger than *j* and vice versa.
+Go's package is geared to sort a container from the smallest element to the largest, we want to sort in reverse order so we switch the expression; return *true* if item *i* is larger than *j* and vice versa.
 
     type intpartition struct {
         agenda items
@@ -137,7 +137,7 @@ The *Next()* method starts py popping the first item from the *agenda* and assig
 
 Looping through the solution space is trivial.
 
-A version that only prints out sums that containt distinct components, e.g. no number repeats itself, is easy. Simply leverge the *i.Filter* function and write a filter for the serie of intgers.
+A version that only prints out sums that contain distinct components, e.g. no number repeats itself, is easy. Simply leverage the *i.Filter* function and write a filter for the serie of integers.
 
     func distinct(itr i.Iterator) bool {
         item, _ := itr.Value().([]int)
