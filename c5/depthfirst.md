@@ -68,4 +68,4 @@ The *IntPartition* iterator is now a short piece of code that focuses on solving
 
 Now its 15 lines of code rather than 50 lines of code. Yeah for iterator building blocks.
 
-Get the source at [GitHub](https://github.com/mg/hog/blob/master/c5/depthfirst.go). The *Dfs* iterator is also available in the [iterator library](https://github.com/mg/i/blob/master/dfs.go).
+Get the source at [GitHub](https://github.com/mg/hog/blob/master/c5/depthfirst.go). The *Dfs* iterator is also available in the [iterator library](https://github.com/mg/i/blob/master/itk/dfs.go).
